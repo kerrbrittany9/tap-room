@@ -1,9 +1,12 @@
 <div class="container">
    <h1>Larry Usually Brewing Co.</h1>
+   <h1>Admin Page</h1>
    <h3>Tap Room Selection</h3>
-
+  <div class="newDrank">
+    <button (click)="addKeg()">Add that Drank</button>
+  </div>
    <ul>
-     <li *ngFor="let currentKeg of kegs">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editKeg(currentKeg)'>Edit</button></li>
+     <li *ngFor="let currentKeg of kegs">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content</li>
    </ul>
    <hr>
    <div *ngIf='selectedKeg'>

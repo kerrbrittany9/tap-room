@@ -14,6 +14,14 @@ export class AppComponent {
     new Keg('Cascade', 'Figaro 2015', 475, '8.4'),
     new Keg('Full Sail', 'Blood Orange Wheat', 495, '5.2')
   ];
+  selectedKeg = null;
+
+  editKeg(clickedKeg){
+    this.selectedKeg = clickedKeg;
+  }
+  finishedEditing(){
+    this.selectedKeg = null;
+  }
 }
 
 export class Keg {

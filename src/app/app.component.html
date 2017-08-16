@@ -2,5 +2,7 @@
    <h1>Larry Usually Brewing Co.</h1>
    <h3>Tap Room Selection</h3>
 
-   {{firstKeg.name}} from {{firstKeg.brand}}. ${{firstKeg.price}} per keg. {{firstKeg.abv}}% alcohol content
+   <ul>
+     <li *ngFor="let currentKeg of kegs">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content</li>
+   </ul>
 </div>

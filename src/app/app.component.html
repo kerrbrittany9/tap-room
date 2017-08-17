@@ -1,9 +1,7 @@
 <div class="container">
    <h1>Larry Usually Brewing Co.</h1>
    <h3>Tap Room Selection</h3>
-   <ul>
-     <li *ngFor="let currentKeg of kegs">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editKeg(currentKeg)'>Edit</button> <button [class]='pintColor(currentKeg)' (click)='sellPint(currentKeg)'>Sell Pint</button> ({{currentKeg.pints}})</li>
-   </ul>
+   <keg-list></keg-list>
    <hr>
    <div *ngIf='selectedKeg'>
      <h2>{{selectedKeg.brand}}'s {{selectedKeg.name}}</h2>

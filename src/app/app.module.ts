@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { KegListComponent } from './keg-list.component';
+import { KegListComponent } from './keg-list/keg-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, KegListComponent
+    AppComponent,
+    KegListComponent
   ],
   imports: [
     BrowserModule,

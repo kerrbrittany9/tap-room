@@ -7,7 +7,6 @@ import { Keg } from './keg.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'BEER Brittany drinks!';
   selectedKeg = null;
 
   masterKegList: Keg[] = [

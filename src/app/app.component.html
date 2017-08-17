@@ -1,19 +1,7 @@
 <div class="container">
-   <h1>Larry Usually Brewing Co.</h1>
-   <h3>Tap Room Selection</h3>
-   <app-keg-list [childKegList]="masterKegList" (clickSender)='editKeg($event)'></app-keg-list>
-   <hr>
-   <div *ngIf='selectedKeg'>
-     <h2>{{selectedKeg.brand}}'s {{selectedKeg.name}}</h2>
-     <h3>Edit Keg</h3>
-     <label>Enter Keg brand:</label>
-     <input type="text" [(ngModel)]='selectedKeg.brand'><br>
-     <label>Enter Keg name:</label>
-     <input type="text" [(ngModel)]='selectedKeg.name'><br>
-     <label>Enter Keg price:</label>
-     <input type="number" [(ngModel)]='selectedKeg.price'><br>
-     <label>Enter Keg abv:</label>
-     <input type="text" [(ngModel)]='selectedKeg.abv'><br>
-     <button (click)='finishedEditing()'>Save</button>
-   </div>
+  <h1>Larry Usually Brewing Co.</h1>
+  <h3>Tap Room Selection</h3>
+  <app-keg-list [childKegList]="masterKegList" (clickSender)='editKeg($event)'></app-keg-list>
+  <hr>
+  <app-edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></app-edit-keg>
 </div>

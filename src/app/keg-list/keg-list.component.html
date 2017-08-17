@@ -1,3 +1,3 @@
 <ul>
-  <li *ngFor="let currentKeg of kegs">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editKeg(currentKeg)'>Edit</button> <button [class]='pintColor(currentKeg)' (click)='sellPint(currentKeg)'>Sell Pint</button> ({{currentKeg.pints}})</li>
+  <li [class]='pintColor(currentKeg)' *ngFor="let currentKeg of childKegList">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editKeg(currentKeg)'>Edit</button> <button  (click)='sellPint(currentKeg)'>Sell Pint</button> ({{currentKeg.pints}})</li>
 </ul>

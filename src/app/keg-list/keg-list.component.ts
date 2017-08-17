@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Keg } from '../keg.model';
 
 @Component({
@@ -8,13 +8,7 @@ import { Keg } from '../keg.model';
 })
 
 export class KegListComponent {
-  kegs: Keg[] = [
-    new Keg('Rogue', 'Dead Guy Ale', 500, '5.6'),
-    new Keg('Ninkasi', 'Total Domination', 450, '6.7'),
-    new Keg('10 Barrel', 'Apocalypse IPA', 525, '6.5'),
-    new Keg('Cascade', 'Figaro 2015', 475, '8.4'),
-    new Keg('Full Sail', 'Blood Orange Wheat', 495, '5.2')
-  ];
+  @Input() childKegList: Keg[];
 
   sellPint(clickedKeg) {
     clickedKeg.pints -= 1;
@@ -28,7 +22,7 @@ export class KegListComponent {
   pintColor(currentKeg) {
       if (currentKeg.pints < 60 && currentKeg.pints > 30) {
         return 'bg-warning';
-      } else if (currentKeg.pints < 30 ) {
+      } else if (currentKeg.pints <= 30 ) {
         return 'bg-danger';
       }
     }

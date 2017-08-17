@@ -1,0 +1,3 @@
+<ul>
+  <li *ngFor="let currentKeg of kegs">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editKeg(currentKeg)'>Edit</button></li>
+</ul>

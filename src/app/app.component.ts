@@ -22,9 +22,29 @@ export class AppComponent {
   finishedEditing(){
     this.selectedKeg = null;
   }
+
+  sellPint(clickedKeg) {
+    clickedKeg.pints -= 1;
+    if (clickedKeg.pints === 10) {
+      alert('keg is low');
+    } else if (clickedKeg.pints === 0) {
+      alert('keg is empty');
+    }
+  }
+
+  pintColor(currentKeg) {
+      if (currentKeg.pints < 60 && currentKeg.pints > 30) {
+        return 'bg-warning';
+      } else if (currentKeg.pints < 30 ) {
+        return 'bg-danger';
+      }
+  }
+
+
 }
 
 export class Keg {
   public empty: boolean = false;
+  public pints: number = 124;
   constructor(public brand: string, public name: string, public price: number, public abv: string) { }
 }

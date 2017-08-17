@@ -1,3 +1,9 @@
+<select (change)="onChange($event.target.value)">
+    <option value="allKegs" selected="selected">All Beers</option>
+    <option value="strongKegs">Strong Beers</option>
+    <option value="mediumKegs" >Medium Beers</option>
+  </select>
+
 <ul>
-  <li [class]='pintColor(currentKeg)' *ngFor="let currentKeg of childKegList">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editButtonHasBeenClicked(currentKeg)'>Edit</button> <button  (click)='sellPint(currentKeg)'>Sell Pint</button> ({{currentKeg.pints}})</li>
+  <li [class]='pintColor(currentKeg)' *ngFor="let currentKeg of childKegList | strength:filterByStrength">{{currentKeg.name}} from {{currentKeg.brand}}. ${{currentKeg.price}} per keg. {{currentKeg.abv}}% alcohol content <button (click)='editButtonHasBeenClicked(currentKeg)'>Edit</button> <button  (click)='sellPint(currentKeg)'>Sell Pint</button> ({{currentKeg.pints}})</li>
 </ul>

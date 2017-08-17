@@ -10,6 +10,7 @@ import { Keg } from '../keg.model';
 export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
+  filterByStrength: string = "allKegs";
 
   sellPint(clickedKeg) {
     clickedKeg.pints -= 1;
@@ -22,12 +23,14 @@ export class KegListComponent {
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
-
   pintColor(currentKeg) {
-      if (currentKeg.pints < 60 && currentKeg.pints > 30) {
-        return 'bg-warning';
-      } else if (currentKeg.pints <= 30 ) {
-        return 'bg-danger';
-      }
+    if (currentKeg.pints < 60 && currentKeg.pints > 30) {
+      return 'bg-warning';
+    } else if (currentKeg.pints <= 30 ) {
+      return 'bg-danger';
     }
+  }
+  onChange(optionFromMenu) {
+  this.filterByStrength = optionFromMenu;
+  }
 }

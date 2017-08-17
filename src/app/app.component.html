@@ -1,7 +1,7 @@
 <div class="container">
    <h1>Larry Usually Brewing Co.</h1>
    <h3>Tap Room Selection</h3>
-   <app-keg-list [childKegList]="masterKegList"></app-keg-list>
+   <app-keg-list [childKegList]="masterKegList" (clickSender)='editKeg($event)'></app-keg-list>
    <hr>
    <div *ngIf='selectedKeg'>
      <h2>{{selectedKeg.brand}}'s {{selectedKeg.name}}</h2>

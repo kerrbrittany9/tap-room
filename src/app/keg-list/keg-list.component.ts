@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../keg.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Keg } from '../keg.model';
 
 export class KegListComponent {
   @Input() childKegList: Keg[];
+  @Output() clickSender = new EventEmitter();
 
   sellPint(clickedKeg) {
     clickedKeg.pints -= 1;
@@ -17,6 +18,9 @@ export class KegListComponent {
     } else if (clickedKeg.pints === 0) {
       alert('keg is empty');
     }
+  }
+  editButtonHasBeenClicked(kegToEdit: Keg) {
+    this.clickSender.emit(kegToEdit);
   }
 
   pintColor(currentKeg) {

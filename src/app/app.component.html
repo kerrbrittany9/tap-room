@@ -4,4 +4,5 @@
   <app-keg-list [childKegList]="masterKegList" (clickSender)='editKeg($event)'></app-keg-list>
   <hr>
   <app-edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></app-edit-keg>
+  <app-new-keg (newKegSender)="addKeg($event)"></app-new-keg>
 </div>

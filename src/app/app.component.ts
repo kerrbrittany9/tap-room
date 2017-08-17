@@ -23,4 +23,9 @@ export class AppComponent {
   finishedEditing(){
     this.selectedKeg = null;
   }
+
+
+  addKeg(newKegFromChild: Keg) {
+    this.masterKegList.push(newKegFromChild);
+  }
 }
